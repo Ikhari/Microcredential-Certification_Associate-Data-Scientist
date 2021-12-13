@@ -108,4 +108,15 @@ def linePlot():
 
   st.pyplot(fig)
 linePlot()
+
+st.header('Jumlah Kematian Gangguan darah')
+def linePlot():
+  fig = plt.figure(figsize=(24,10)) 
+  plt.plot(jumlah_gdarah,c="red")
+  plt.title("GANGGUAN DARAH",fontsize=16)
+  plt.xlabel("tahun 2017 - 2019",fontsize=16)
+  plt.ylabel("jumlah",fontsize=16)
+
+  st.pyplot(fig)
+linePlot()
 #===END PLOT===
