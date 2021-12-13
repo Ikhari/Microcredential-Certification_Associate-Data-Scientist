@@ -99,15 +99,14 @@ jumlah_pendarahan=ja.iloc[:,6:7].values
 
 #===START PLOT===
 st.header('Perbandingan Bahasa Pemrograman yang Digunakan di Dunia')
-def line_chart():
-  plt.figure(figsize=(24,10)) 
+def linePlot():
+  fig = plt.figure(figsize=(24,10)) 
   plt.plot(jumlah_pneu,c="red")
   plt.title("PNEUMONIA",fontsize=16)
   plt.xlabel("tahun 2017 - 2019",fontsize=16)
   plt.ylabel("jumlah",fontsize=16)
   plt.grid()
   
-  fig = plt.figure(figsize = (10, 6))
   st.pyplot(fig)
-line_chart()
+linePlot()
 #===END PLOT===
