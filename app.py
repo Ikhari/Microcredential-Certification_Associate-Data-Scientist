@@ -8,6 +8,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import plotly.express as px
 
 st.title('Test')
 
@@ -19,36 +20,38 @@ plt.style.use('seaborn')
 warnings.filterwarnings("ignore")
 
 # Panggil file (load file bernama Jumlah-kematian.xlsx) dan simpan dalam dataframe
-st.header('Sample Data Jumlah Kematian Tahun 2017-2018')
+st.header('Sample Data Jumlah Kematian Tahun 2017-2019')
 dataset = "https://filedn.com/lePVfyAoiNxFBjMKNqcr2O7/MICROCREDENTIAL/ProjectTugasAkhir/Jumlah-kematian.xlsx"
 data = pd.read_excel(dataset)
 
 st.header('Sample Data Jumlah Kematian')
 # tampilkan 5 baris awal dataset dengan function head()
-data.head(5)
-data.info()
-data.describe()
+st.write(data.head(5))
+data.corr()
+
+# st.write(data.info())
+
+st.write(data.describe().astype(int))
 
 # melihat jumlah baris dan jumlah kolom (bentuk data) pada data df dengan fungsi .shape
-data.shape
+# st.text('jumlah baris dan jumlah kolom')
+# st.write(data.shape)
 
 st.header('Mengecek Data yang Hilang')
 # cek nilai yang hilang / missing values di dalam data
-data.isnull().sum()
-data.corr()
+st.write(data.isnull().sum())
 
-st.header('Pivot Table')
-pd.pivot_table(data=data, index='kematian', columns=[
-               'penyebab'], values='jumlah', aggfunc='sum'). fillna(0)
+st.header('Table Jumlah Penyebab Kematian 1')
+st.write(pd.pivot_table(data=data, index='kematian', columns=['penyebab'], values='jumlah', aggfunc='sum').fillna(0).astype(int))
 
-st.header('Pivot Table')
-pd.pivot_table(data=data, index='penyebab', values='jumlah', aggfunc='sum')
+st.header('Table Jumlah Penyebab Kematian 2')
+df=pd.pivot_table(data=data, index='penyebab', values='jumlah', aggfunc='sum')
+st.write(pd.pivot_table(data=data, index='penyebab', values='jumlah', aggfunc='sum'))
 
-st.header('Pivot Table')
-pd.pivot_table(data=data, index='penyebab', values='jumlah', aggfunc='sum')\
-    .plot.bar(figsize=(20, 10), colormap='tab20c').legend(title=None)
+st.header('Bar Jumlah Kematian')
+st.bar_chart(pd.pivot_table(data=data, index='penyebab', values='jumlah', aggfunc='sum'))
 
-st.header('Pivot Table')
-data.groupby(['penyebab']).sum().plot(autopct='%1.0f%%', kind='pie',
-                                      subplots=True, y='jumlah', figsize=(15, 14), title='Persentasi')
-plt.tight_layout()
+st.header('Pivot Tableaa')
+pnyb = ['ASFIKSIA','BBLR','CAMPAK','DEMAM','DIARE','DIFTERI','GANGGUAN DARAH','GANGGUAN METABOLIK','HIPERTENSI','INFEKSI','KELAINAN','KELAINAN SARAF','LAIN-LAIN','MALARIA','PENDARAHAN','PNEUMONIA','SALURAN CERNA','SEPSIS','TETANUS']
+fig = px.pie(df,values='jumlah', names=pnyb, title='my eyes cryin bruh')
+st.plotly_chart(fig)
