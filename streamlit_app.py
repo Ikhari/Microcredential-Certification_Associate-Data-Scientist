@@ -100,13 +100,13 @@ jumlah_pendarahan=ja.iloc[:,6:7].values
 #===START PLOT===
 st.header('Jumlah Kematian Lain-Lain')
 def linePlot():
-  plt.figure(figsize=(24,10)) 
+  fig = plt.figure(figsize=(24,10)) 
   plt.plot(jumlah_lain,c="red")
   plt.title("LAIN-LAIN",fontsize=16)
   plt.xlabel("tahun 2017 - 2019",fontsize=16)
   plt.ylabel("jumlah",fontsize=16)
 
-st.pyplot(fig)
+  st.pyplot(fig)
 linePlot()
 
 st.header('Jumlah Kematian BBLR')
@@ -114,6 +114,50 @@ def linePlot():
   fig = plt.figure(figsize=(24,10)) 
   plt.plot(jumlah_bblr,c="red")
   plt.title("BBLR",fontsize=16)
+  plt.xlabel("tahun 2017 - 2019",fontsize=16)
+  plt.ylabel("jumlah",fontsize=16)
+
+  st.pyplot(fig)
+linePlot()
+
+st.header('Jumlah Kematian Asfiksia')
+def linePlot():
+  fig = plt.figure(figsize=(24,10)) 
+  plt.plot(jumlah_asfiksia,c="red")
+  plt.title("ASFIKSIA",fontsize=16)
+  plt.xlabel("tahun 2017 - 2019",fontsize=16)
+  plt.ylabel("jumlah",fontsize=16)
+
+  st.pyplot(fig)
+linePlot()
+
+st.header('Jumlah Kematian Kelainan')
+def linePlot():
+  fig = plt.figure(figsize=(24,10)) 
+  plt.plot(jumlah_kelainann,c="red")
+  plt.title("KELAINAN",fontsize=16)
+  plt.xlabel("tahun 2017 - 2019",fontsize=16)
+  plt.ylabel("jumlah",fontsize=16)
+
+  st.pyplot(fig)
+linePlot()
+
+st.header('Jumlah Kematian Hipertensi')
+def linePlot():
+  fig = plt.figure(figsize=(24,10)) 
+  plt.plot(jumlah_hiper,c="red")
+  plt.title("HIPERTENSI",fontsize=16)
+  plt.xlabel("tahun 2017 - 2019",fontsize=16)
+  plt.ylabel("jumlah",fontsize=16)
+
+  st.pyplot(fig)
+linePlot()
+
+st.header('Jumlah Kematian Pendarahan')
+def linePlot():
+  fig = plt.figure(figsize=(24,10)) 
+  plt.plot(jumlah_pendarahan,c="red")
+  plt.title("PENDARAHAN",fontsize=16)
   plt.xlabel("tahun 2017 - 2019",fontsize=16)
   plt.ylabel("jumlah",fontsize=16)
 
