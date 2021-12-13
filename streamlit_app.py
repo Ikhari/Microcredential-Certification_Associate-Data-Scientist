@@ -45,16 +45,6 @@ pnyb = ['ASFIKSIA','BBLR','CAMPAK','DEMAM','DIARE','DIFTERI','GANGGUAN DARAH','G
 fig = px.pie(df,values='jumlah', names=pnyb, title='Pie chart Jumlah Penyebab Kematian ')
 st.plotly_chart(fig)
 
-#===START PLOT===
-plt.figure(figsize=(24,10)) 
-plt.plot(jumlah_pneu,c="red")
-plt.title("PNEUMONIA",fontsize=16)
-plt.xlabel("tahun 2017 - 2019",fontsize=16)
-plt.ylabel("jumlah",fontsize=16)
-plt.grid()
-plt.show()
-#===END PLOT===
-
 
 
 #===START ILOC===
@@ -122,3 +112,13 @@ ja=data.loc[(data.jumlah >= 0) & (data.penyebab == 'PENDARAHAN')]
 jumlah_pendarahan=ja.iloc[:,6:7].values
 jumlah_pendarahan
 #===END ILOC===
+
+#===START PLOT===
+plt.figure(figsize=(24,10)) 
+plt.plot(jumlah_pneu,c="red")
+plt.title("PNEUMONIA",fontsize=16)
+plt.xlabel("tahun 2017 - 2019",fontsize=16)
+plt.ylabel("jumlah",fontsize=16)
+plt.grid()
+plt.show()
+#===END PLOT===
