@@ -21,8 +21,8 @@ warnings.filterwarnings("ignore")
 
 # Panggil file (load file bernama Jumlah-kematian.csv) dan simpan dalam dataframe
 st.header('Sample Data Jumlah Kematian Tahun 2017-2019')
-dataset = "https://filedn.com/lePVfyAoiNxFBjMKNqcr2O7/MICROCREDENTIAL/ProjectTugasAkhir/Jumlah-kematian.csv"
-data =  pd.read_csv(dataset)
+dataset = "https://filedn.com/lePVfyAoiNxFBjMKNqcr2O7/MICROCREDENTIAL/ProjectTugasAkhir/Jumlah-kematian.xlsx"
+data = pd.read_excel(dataset)
 
 st.header('Sample Data Jumlah Kematian')
 # tampilkan 5 baris awal dataset dengan function head()
