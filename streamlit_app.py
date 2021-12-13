@@ -94,7 +94,7 @@ jas=data.loc[(data.jumlah >= 0) & (data.penyebab == 'ASFIKSIA')]
 jumlah_asfiksia=jas.iloc[:,4:5].values
 
 ja=data.loc[(data.jumlah >= 0) & (data.penyebab == 'PENDARAHAN')]
-jumlah_pendarahan=ja.iloc[:,6:7].values
+jumlah_pendarahan=ja.iloc[:,4:5].values
 #===END ILOC===
 
 #===START PLOT===
