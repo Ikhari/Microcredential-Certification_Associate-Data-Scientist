@@ -19,10 +19,10 @@ plt.style.use('seaborn')
 # me-non aktifkan peringatan pada python
 warnings.filterwarnings("ignore")
 
-# Panggil file (load file bernama Jumlah-kematian.xlsx) dan simpan dalam dataframe
+# Panggil file (load file bernama Jumlah-kematian.csv) dan simpan dalam dataframe
 st.header('Sample Data Jumlah Kematian Tahun 2017-2019')
-dataset = "https://filedn.com/lePVfyAoiNxFBjMKNqcr2O7/MICROCREDENTIAL/ProjectTugasAkhir/Jumlah-kematian.xlsx"
-data = pd.read_excel(dataset)
+dataset = "https://filedn.com/lePVfyAoiNxFBjMKNqcr2O7/MICROCREDENTIAL/ProjectTugasAkhir/Jumlah-kematian.csv"
+data =  pd.read_csv(dataset))
 
 st.header('Sample Data Jumlah Kematian')
 # tampilkan 5 baris awal dataset dengan function head()
