@@ -134,7 +134,7 @@ linePlot()
 st.header('Jumlah Kematian Kelainan')
 def linePlot():
   fig = plt.figure(figsize=(24,10)) 
-  plt.plot(jumlah_kelainann,c="red")
+  plt.plot(jumlah_kelainan,c="red")
   plt.title("KELAINAN",fontsize=16)
   plt.xlabel("tahun 2017 - 2019",fontsize=16)
   plt.ylabel("jumlah",fontsize=16)
