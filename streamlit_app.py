@@ -16,7 +16,7 @@ st.header('Sample Data Jumlah Kematian Tahun 2017 - 2019')
 dataset = "https://filedn.com/lePVfyAoiNxFBjMKNqcr2O7/MICROCREDENTIAL/ProjectTugasAkhir/Jumlah-kematian.xlsx"
 data = pd.read_excel(dataset)
 
-df.drop(['id', 'kode_kota_kabupaten'], axis=1, inplace=True)
+data.drop(['id', 'kode_kota_kabupaten'], axis=1, inplace=True)
 
 st.header('Sample Data Jumlah Kematian')
 # tampilkan 5 baris awal dataset dengan function head()
